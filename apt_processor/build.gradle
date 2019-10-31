@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.squareup:javapoet:1.9.0' // square 开源的 Java 代码生成框架
+
+    compile 'com.google.auto.service:auto-service:1.0-rc2' //Google 开源的用于注册自定义注解处理器的工具
+    implementation project(':apt_annotation') //自定义的注解声明库
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
